@@ -1,0 +1,44 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Texttospeech.AI.com{% endblock  %}</title>
+   
+   <link rel="stylesheet" href="{% static 'css/css1.css' %}">
+
+    
+</head>
+<body>
+       
+     <div class="main-div" id="maindiv"><form  method="POST"><h4 style="color:white;margin-left:85%;">{{ date }}</h4>
+       {% csrf_token %}
+      <button type="submit" name="admin" style="padding:10px;width:100px;border:1px solid aqua;font-size:17px;color:white;background-color:transparent;border-radius:5px;margin-top:10px;margin-left:5px;">Admin</button>
+     </form><br><br>
+      
+                    <center> 
+                             <div class="header" id="header">
+                                    <h1 class="greet">Welcome to Open Voice AI</h1>
+                             </div><br><br>
+                             <div id="storage">
+                                   <form  method="POST">{% csrf_token %}<br><br>
+                                          <button type="submit"  class="btn1" name="create">Create Account</button>  
+                                           <button type="submit"  class="btn2" name="login">Log in</button>
+                                   </form>
+                            </div>
+                          
+                            
+                    </center>
+                         <br><br><br>
+                                <center> <textarea name="input" id="text" cols="30" rows="10" placeholder="Type here..." readonly></textarea></center>
+                                <center><button type="submit" class="button1" id="button1" style="display:none;">Speak</button></center>
+                      
+            </div>
+            
+            <script  src="{% static 'js/backendscript6.js' %}"></script>
+</body>
+</html>

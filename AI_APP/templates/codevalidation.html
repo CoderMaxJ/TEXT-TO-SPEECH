@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifying account</title>
+    <link rel="stylesheet" href="{% static 'css/loginstyle1.css' %}">
+</head>
+<body>
+    <form method="POST">{% csrf_token %}
+        
+        <div class="box">
+            <center>{{success}}</center>
+            <center> <p style="color:red;">{{err}}</p></center>
+            <label for="">Email:</label><input type="email" id="email" name="email" class="emailtext" placeholder="Ex. johnsensopeta22@gmail.com"><br><br>
+            <label for="">Code: </label><input type="text" id="code" name="code" class="codetext" placeholder="6 Digits code"><br><br><br>
+            <button id="btnclear">Clear</button><input type="submit" value="Go" id="btngo">
+        </div>
+    </form>
+    <script  src="{% static 'js/codevalidation.js' %}"></script>
+</body>
+</html>

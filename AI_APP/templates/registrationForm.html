@@ -1,0 +1,52 @@
+
+{% load  static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Create account{% endblock  %}</title>
+  
+     <link rel="stylesheet" href="{% static '/css/css3.css' %}">  
+
+   
+</head>
+<body> <form action="{% url 'gotologin'%}" method="POST">{% csrf_token %}
+        <button type="submit" name="btn" style="padding:9px; border:1px solid aqua;background-color:#6a6b74;width:100px;border-radius:5px;color:aqua;font-size:14px; margin-left:87%;margin-top:5px;" id="loginbtn">Login</button>
+ </form>
+        <center><h2 style="color:white"; id="response" value="{{ response }}">{{ response }}</h2></center><br>
+       <center> <h3 style="color:white";>{{ label }}</h3><h2 style="color:skyblue"; id="code" value="{{ code }}" >{{ code }}</h2></center>
+        <center><h3 style="color:red;">{{ res }}</h3></center><br>
+       
+            <div class="main-div" id="mainbox">
+            
+                    <center>
+                             <div class="header" id=""><br><br>
+                                <form action=" {% url 'backendscript' %} " method="POST">{%  csrf_token  %}
+                                <label for="">Firstname</label><br>
+                                <input type="text" name="firstname"><br><br>
+                                <label for="">Lastname</label><br>
+                                <input type="text" name="lastname"><br><br>
+                                <label for="">Email</label><br>
+                                <input type="email" name="email"><br>
+                                <label for="">Account Type</label><br>
+                                <input type="radio" name="account_type" value="free"><label for="">Free trial (7 days exp.)</label><br>
+                                <input type="radio" name="account_type" value="premium"><label>Premium (unlimited access)</label><br><br>
+                                <input type="submit" value="Done" id="btn" id="donebtn">
+                        </form>
+
+
+
+                             </div>
+                    </center>
+                        
+                         
+                        
+                    
+            </div>
+         
+
+            <script  src="{% static 'js/registrationscript.js' %}"></script>
+</body>
+</html> 

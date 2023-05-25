@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin verification</title>
+</head>
+<body style="background-color:black;">
+    
+    <div style="width:30%;height:10vh;margin:auto;margin-top:220px;display:flex;justify-content:center;align-items:center;">
+   <form action="{% url 'check' %}" method="POST"> {% csrf_token %} <h3 style="color:red;"><center>{{ error_response }}</center></h3> <br> <input type="password" placeholder="Admin secret password" name="pass" style="
+        padding:10px;
+        text-align:center;
+        outline:none;
+        border:2px solid green;
+        font-size:19px;
+        ">
+    </form> 
+    </div>
+</body>
+</html>

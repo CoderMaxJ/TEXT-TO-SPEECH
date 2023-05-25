@@ -1,0 +1,21 @@
+
+body{
+    background-color: dimgray;
+}
+ th{
+    padding: 10px;
+    color:red;
+    border: 1px solid white;
+}
+
+td{
+    color:green;
+    text-align: center;
+  
+}
+tr{
+    border: 1px solid white;}
+table{
+    background-color: black;
+    width: 100%;
+}
